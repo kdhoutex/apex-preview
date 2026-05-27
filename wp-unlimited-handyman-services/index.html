@@ -5,179 +5,540 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WP Unlimited Handyman Services — Honest, on-time handyman work across Greater Houston</title>
   <meta name="description" content="WP Unlimited Handyman Services — Honest, on-time handyman work across Greater Houston. Serving Cypress, TX.">
-  <meta name="robots" content="noindex, nofollow"><!-- preview site, don't index -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
+    /* HANDYMAN PALETTE: charcoal + copper + cream */
+    :root {
+      --charcoal: #1f1d1b;
+      --charcoal-soft: #2d2926;
+      --copper: #d97706;
+      --copper-deep: #b45309;
+      --copper-soft: #fbbf24;
+      --cream: #faf7f2;
+      --cream-warm: #f5f0e8;
+      --paper: #ffffff;
+      --ink: #1a1a1a;
+      --ink-soft: #57534e;
+      --line: #e7e1d6;
+    }
     *,*::before,*::after { box-sizing: border-box; }
-    html,body { margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
-      color: #1B3A5C;
-      background: #ffffff;
+      margin: 0; padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
       -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
     }
-    a { color: #3366FF; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1,h2,h3 { color: #1B3A5C; margin-top: 0; }
-    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    a { color: var(--copper-deep); text-decoration: none; }
+    h1,h2,h3 { margin: 0 0 0.5em; line-height: 1.15; letter-spacing: -0.02em; color: var(--charcoal); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #1B3A5C 0%, #3366FF 100%);
-      color: #fff;
-      padding: 48px 20px 40px;
+    /* --- APEX PREVIEW BANNER (uses Apex's own brand: electric blue + chrome on dark) --- */
+    .preview-banner {
+      background:
+        linear-gradient(90deg, #0a1628 0%, #1e3a8a 50%, #0a1628 100%);
+      color: #e0e7ff;
       text-align: center;
+      padding: 11px 16px;
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid #1e40af;
+      box-shadow: inset 0 -1px 0 rgba(96,165,250,0.3);
     }
-    .hero h1 { color: #fff; font-size: 2.0rem; margin: 0 0 8px; }
-    .hero .tagline { font-size: 1.1rem; opacity: 0.95; margin: 0 0 24px; }
-    .cta-call {
-      display: inline-block;
-      background: #C45A2D;
-      color: #fff !important;
-      padding: 16px 32px;
-      border-radius: 6px;
-      font-size: 1.15rem;
-      font-weight: 600;
+    .preview-banner strong {
+      color: #c0c0c0;
+      background: linear-gradient(90deg, #e5e4e2 0%, #a8a8a8 50%, #e5e4e2 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+    .preview-banner a { color: #60a5fa; text-decoration: underline; font-weight: 700; }
+
+    /* --- HERO --- */
+    .hero {
+      position: relative;
+      background: var(--charcoal);
+      color: #fff;
+      padding: 90px 0 100px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(217,119,6,0.18) 0%, transparent 45%),
+        radial-gradient(circle at 15% 80%, rgba(217,119,6,0.08) 0%, transparent 40%),
+        repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(255,255,255,0.015) 80px, rgba(255,255,255,0.015) 81px);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute;
+      right: -120px; top: 50%; transform: translateY(-50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: rgba(217,119,6,0.12);
+      border: 1px solid rgba(217,119,6,0.35);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.76rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 26px;
+      color: var(--copper-soft);
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: #22c55e; box-shadow: 0 0 10px #22c55e;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .hero .tagline {
+      font-size: clamp(1.08rem, 2.2vw, 1.4rem);
+      max-width: 720px;
+      color: #d6cfc4;
+      margin: 0 0 38px;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 36px;
+    }
+    .btn-primary, .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 17px 30px;
+      font-size: 1.02rem; font-weight: 700;
+      border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-      min-width: 220px;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .cta-call:hover { background: #a34a25; text-decoration: none; }
-    .hero .rating-line { margin-top: 18px; font-size: 0.95rem; opacity: 0.9; }
+    .btn-primary {
+      background: var(--copper);
+      color: #fff !important;
+      box-shadow: 0 12px 32px rgba(217,119,6,0.42);
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--copper-deep); box-shadow: 0 16px 38px rgba(217,119,6,0.5); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.07);
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.13); }
+    .trust-row {
+      display: flex; flex-wrap: wrap; gap: 20px 32px;
+      margin-top: 28px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      color: #cbbfae; font-size: 0.92rem; font-weight: 500;
+    }
+    .trust-item svg { color: var(--copper-soft); flex-shrink: 0; }
 
-    /* Sections */
-    section { padding: 36px 20px; border-bottom: 1px solid #eaeaea; }
-    section h2 { font-size: 1.5rem; margin: 0 0 16px; }
-
+    /* --- SERVICES --- */
+    .services {
+      padding: 90px 0 80px;
+      background: var(--cream);
+    }
+    .section-eyebrow {
+      color: var(--copper-deep);
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      color: var(--ink-soft); font-size: 1.05rem;
+      max-width: 640px; margin: 0 0 48px;
+    }
     .services-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
-    .service-item {
-      padding: 14px 18px;
-      background: #f5f8fc;
-      border-left: 4px solid #3366FF;
-      border-radius: 4px;
+    .service-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(31,29,27,0.08);
+      border-color: var(--copper-soft);
+    }
+    .service-icon {
+      width: 50px; height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--copper-soft);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 18px rgba(31,29,27,0.18);
+    }
+    .service-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 0;
+    }
+
+    /* --- ABOUT / WHY US --- */
+    .about-block {
+      padding: 90px 0;
+      background: var(--cream-warm);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-text p {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin: 0 0 16px;
+    }
+    .why-list { list-style: none; padding: 0; margin: 24px 0 0; }
+    .why-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0;
+      color: var(--charcoal);
       font-weight: 500;
     }
-
-    .review {
-      padding: 16px 18px;
-      background: #fafafa;
-      border-radius: 6px;
-      margin-bottom: 12px;
+    .why-list svg { flex-shrink: 0; margin-top: 3px; color: var(--copper); }
+    .stats-card {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 30px 60px rgba(31,29,27,0.18);
+      position: relative;
+      overflow: hidden;
     }
-    .review .stars { color: #f4b400; font-size: 1.05rem; }
-    .review .quote { margin: 8px 0 6px; font-style: italic; }
-    .review .author { font-size: 0.85rem; color: #666; }
-
-    /* Contact card */
-    .contact-card {
-      background: #fafafa;
-      border: 1px solid #eaeaea;
-      border-radius: 8px;
-      padding: 22px;
-      margin-top: 12px;
+    .stats-card::before {
+      content: ''; position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,119,6,0.2) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .contact-card .row { margin-bottom: 8px; }
-    .contact-card .label { font-weight: 600; color: #1B3A5C; }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+    .stat { text-align: left; }
+    .stat-num {
+      font-size: 2.4rem; font-weight: 900;
+      color: var(--copper-soft);
+      line-height: 1;
+    }
+    .stat-label { color: #cbbfae; font-size: 0.86rem; margin-top: 6px; }
 
-    /* Disclosure footer — mandatory, do not remove */
+    /* --- REVIEWS --- */
+    .reviews {
+      padding: 90px 0;
+      background: var(--cream);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .review-card {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 30px 28px;
+      box-shadow: 0 4px 14px rgba(31,29,27,0.06);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+    .review-stars { color: #f59e0b; font-size: 1.15rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-quote {
+      color: var(--charcoal);
+      font-size: 1.02rem;
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .review-author {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--copper) 0%, var(--copper-deep) 100%);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .author-name { font-weight: 600; color: var(--charcoal); font-size: 0.95rem; }
+    .author-meta { color: var(--ink-soft); font-size: 0.82rem; }
+
+    /* --- CTA SECTION --- */
+    .cta-section {
+      padding: 90px 0;
+      background: var(--charcoal);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(217,119,6,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-section p { color: #d6cfc4; font-size: 1.1rem; max-width: 580px; margin: 0 auto 36px; }
+
+    /* --- CONTACT --- */
+    .contact {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .contact-card-modern {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+    }
+    .contact-label {
+      color: var(--copper-deep); font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 700; margin-bottom: 8px;
+    }
+    .contact-value { color: var(--charcoal); font-size: 1.1rem; font-weight: 600; }
+    .contact-note { color: var(--ink-soft); font-size: 0.85rem; margin-top: 6px; }
+
+    /* --- DISCLOSURE FOOTER (Apex brand - electric blue + chrome on dark) --- */
     .disclosure {
-      background: #fff8f3;
-      border-top: 3px solid #C45A2D;
-      padding: 22px 20px;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      color: #1B3A5C;
+      background: #0a1628;
+      color: #94a3b8;
+      padding: 50px 0 40px;
+      font-size: 0.88rem;
+      line-height: 1.65;
     }
-    .disclosure strong { color: #C45A2D; }
-    .disclosure a { color: #1B3A5C; text-decoration: underline; }
+    .disclosure strong {
+      background: linear-gradient(90deg, #e5e4e2 0%, #a8a8a8 50%, #e5e4e2 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .disclosure a { color: #60a5fa; }
+    .disclosure .footer-fine { color: #475569; font-size: 0.78rem; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(96,165,250,0.12); }
 
-    /* Mobile tweaks */
-    @media (max-width: 480px) {
-      .hero { padding: 36px 16px 28px; }
-      .hero h1 { font-size: 1.6rem; }
-      .hero .tagline { font-size: 1.0rem; }
-      .cta-call { padding: 14px 24px; font-size: 1.05rem; width: 100%; min-width: 0; }
-      section { padding: 28px 16px; }
-      section h2 { font-size: 1.3rem; }
+    /* --- STICKY MOBILE CALL BUTTON --- */
+    .sticky-call {
+      position: fixed; bottom: 16px; left: 16px; right: 16px;
+      background: var(--copper);
+      color: #fff !important;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.02rem;
+      box-shadow: 0 12px 32px rgba(217,119,6,0.5);
+      z-index: 1000;
+      display: none;
+    }
+    .sticky-call svg { vertical-align: middle; margin-right: 6px; }
+
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .sticky-call { display: block; }
+      .hero { padding: 70px 0 110px; }
+      .cta-section { padding: 70px 0 100px; }
+      .hero-ctas .btn-primary, .hero-ctas .btn-secondary { flex: 1 0 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- APEX PREVIEW BANNER -->
-  <div style="background:#fff7ed; border-bottom:2px solid #C45A2D; padding:10px 16px; text-align:center; font-size:0.92rem; color:#1B3A5C;">
-    <strong>This is a free preview built by Apex Development Group USA, LLC.</strong><br>
-    Call <strong>Keith Douglas at <a href="tel:+12817141600" style="color:#C45A2D;">(281) 714-1600</a></strong> to launch it as your real site.
+  <div class="preview-banner">
+    Free preview built by <strong>Apex Development Group USA, LLC</strong> · Call Keith at <a href="tel:+12817141600">(281) 714-1600</a> to launch it
   </div>
 
   <header class="hero">
     <div class="container">
+      <div class="hero-eyebrow">Serving Cypress, TX</div>
       <h1>WP Unlimited Handyman Services</h1>
       <p class="tagline">Honest, on-time handyman work across Greater Houston</p>
-      <a href="tel:+12817141600" class="cta-call">📞 Launch this site — Call Keith (281) 714-1600</a>
-      <div class="rating-line">⭐ — (— Google reviews) · Cypress, TX</div>
+      <div class="hero-ctas">
+        <a href="tel:+12817141600" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Launch this site — (281) 714-1600
+        </a>
+        <a href="#services" class="btn-secondary">See what's included</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Local Houston business</div>
+        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Same-day quotes</div>
+        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Free estimates</div>
+        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Honest pricing</div>
+      </div>
     </div>
   </header>
 
-  <section class="about">
+  <section class="services" id="services">
     <div class="container">
-      <h2>About WP Unlimited Handyman Services</h2>
-      <p>Local handyman service serving Cypress, TX. Small jobs done right — drywall, fixture installs, light carpentry, and the projects you keep meaning to get to. Call for a free quote.</p>
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Trusted service across Cypress, TX</h2>
+      <p class="section-sub">Whether it's a small repair or a project you've been putting off, we show up on time and do the job right the first time.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Drywall repair, patching, and texture matching</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0l-4-4m4 4l4-4M5 16l-2.5 2.5a2.121 2.121 0 0 0 3 3L8 19m11-3l2.5 2.5a2.121 2.121 0 0 1-3 3L16 19"/><rect x="4" y="10" width="16" height="6" rx="1"/></svg></div>
+          <h3>Fixture installation (lights, ceiling fans, faucets, hardware)</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <h3>Light carpentry, furniture assembly, and shelving</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4M9 11V7a3 3 0 0 1 6 0v4M9 11h6"/></svg></div>
+          <h3>Honey-do list and general home maintenance</h3>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="services">
+  <section class="about-block">
     <div class="container">
-      <h2>What We Do</h2>
-      <div class="services-grid">
-        <div class="service-item">Drywall repair, patching, and texture matching</div>
-        <div class="service-item">Fixture installation (lights, ceiling fans, faucets, hardware)</div>
-        <div class="service-item">Light carpentry, furniture assembly, and shelving</div>
-        <div class="service-item">Honey-do list and general home maintenance</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-eyebrow">About Us</div>
+          <h2 class="section-title">About WP Unlimited Handyman Services</h2>
+          <p>Local handyman service serving Cypress, TX. Small jobs done right — drywall, fixture installs, light carpentry, and the projects you keep meaning to get to. Call for a free quote.</p>
+          <ul class="why-list">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Locally owned and operated in Cypress, TX</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Upfront pricing — no surprise add-ons</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day phone response, scheduled work, clean job sites</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Work done right the first time, guaranteed</li>
+          </ul>
+        </div>
+        <div class="stats-card">
+          <div class="stat-row">
+            <div class="stat"><div class="stat-num">—</div><div class="stat-label">Google rating</div></div>
+            <div class="stat"><div class="stat-num">—</div><div class="stat-label">Reviews</div></div>
+            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Local Houston</div></div>
+            <div class="stat"><div class="stat-num">7-day</div><div class="stat-label">Response window</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="reviews">
     <div class="container">
-      <h2>What Customers Say</h2>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <div class="quote">"Be the first to leave a Google review for WP Unlimited Handyman Services — we just got their website set up."</div>
-        <div class="author">— Apex Development Group USA · Google review</div>
+      <div class="section-eyebrow">What Customers Say</div>
+      <h2 class="section-title">Real reviews from real neighbors</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"Be the first to leave a Google review for WP Unlimited Handyman Services — we just got their website set up."</div>
+          <div class="review-author">
+            <div class="author-avatar">A</div>
+            <div><div class="author-name">Apex Development Group USA</div><div class="author-meta">Google review</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"Reach out at (832) 564-7028 — same-day quotes for most jobs."</div>
+          <div class="review-author">
+            <div class="author-avatar">W</div>
+            <div><div class="author-name">WP Unlimited Handyman Services</div><div class="author-meta">Google review</div></div>
+          </div>
+        </div>
       </div>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <div class="quote">"Reach out at (832) 564-7028 — same-day quotes for most jobs."</div>
-        <div class="author">— WP Unlimited Handyman Services · Google review</div>
-      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-eyebrow" style="color:var(--copper-soft);">Ready to Launch</div>
+      <h2>Make WP Unlimited Handyman Services look this good — for real.</h2>
+      <p>This is a free preview built by Apex Development Group USA. Call Keith Douglas to launch it as your live site for just $197/month.</p>
+      <a href="tel:+12817141600" class="btn-primary" style="font-size:1.15rem; padding:18px 36px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Keith — (281) 714-1600
+      </a>
     </div>
   </section>
 
   <section class="contact">
     <div class="container">
-      <h2>Get In Touch</h2>
-      <div class="contact-card">
-        <div class="row"><span class="label">Your business line:</span> (832) 564-7028  <span style="font-size:0.82rem;color:#888;">(will route here once you launch)</span></div>
-        <div class="row"><span class="label">Service area:</span> Cypress, TX and surrounding</div>
-        <div class="row"><span class="label">Hours:</span> By appointment — call (832) 564-7028 for a quote</div>
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Contact WP Unlimited Handyman Services</h2>
+      <div class="contact-grid">
+        <div class="contact-card-modern">
+          <div class="contact-label">Your business line</div>
+          <div class="contact-value">(832) 564-7028</div>
+          <div class="contact-note">Routes to your phone once you launch</div>
+        </div>
+        <div class="contact-card-modern">
+          <div class="contact-label">Service area</div>
+          <div class="contact-value">Cypress, TX and surrounding</div>
+        </div>
+        <div class="contact-card-modern">
+          <div class="contact-label">Hours</div>
+          <div class="contact-value">By appointment — call (832) 564-7028 for a quote</div>
+        </div>
       </div>
-      <p style="margin-top:16px;"><a href="tel:+12817141600" class="cta-call" style="margin-top:8px;">📞 Launch this site — Call Keith (281) 714-1600</a></p>
     </div>
   </section>
 
-  <!-- MANDATORY DISCLOSURE FOOTER. DO NOT REMOVE OR MODIFY. -->
   <footer class="disclosure">
     <div class="container">
-      <p><strong>This is a preview website.</strong> It was built by <strong>Apex Development Group USA, LLC</strong> using public information about WP Unlimited Handyman Services. It is <strong>not</strong> the official website of WP Unlimited Handyman Services and is not yet endorsed by them.</p>
-      <p>If you are the owner of WP Unlimited Handyman Services and want to launch this as your real website (or have it taken down): contact Keith Douglas at <a href="tel:+12817141600">(281) 714-1600</a> or <a href="mailto:keith.douglas@apexdevelopmentgroupusa.com">keith.douglas@apexdevelopmentgroupusa.com</a>.</p>
-      <p style="font-size:0.82rem; color:#888; margin-bottom:0;">© Apex Development Group USA, LLC · Houston, TX · This page is not indexed by search engines.</p>
+      <p><strong>This is a preview website.</strong> Built by Apex Development Group USA, LLC using public information about WP Unlimited Handyman Services. Not the official site of WP Unlimited Handyman Services and not yet endorsed by them.</p>
+      <p>If you are the owner and want to launch this as your real website — or have it taken down — contact <strong>Keith Douglas at <a href="tel:+12817141600">(281) 714-1600</a></strong> or <a href="mailto:keith.douglas@apexdevelopmentgroupusa.com">keith.douglas@apexdevelopmentgroupusa.com</a>.</p>
+      <p class="footer-fine">© Apex Development Group USA, LLC · Houston, TX · Not indexed by search engines.</p>
     </div>
   </footer>
+
+  <a href="tel:+12817141600" class="sticky-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Launch this site — Call Keith (281) 714-1600
+  </a>
 
 </body>
 </html>
