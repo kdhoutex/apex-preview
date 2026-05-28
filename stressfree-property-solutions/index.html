@@ -1,544 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StressFree Property Solutions — Honest, on-time handyman work across Greater Houston</title>
-  <meta name="description" content="StressFree Property Solutions — Honest, on-time handyman work across Greater Houston. Serving Cypress, TX.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    /* HANDYMAN PALETTE: charcoal + copper + cream */
-    :root {
-      --charcoal: #1f1d1b;
-      --charcoal-soft: #2d2926;
-      --copper: #d97706;
-      --copper-deep: #b45309;
-      --copper-soft: #fbbf24;
-      --cream: #faf7f2;
-      --cream-warm: #f5f0e8;
-      --paper: #ffffff;
-      --ink: #1a1a1a;
-      --ink-soft: #57534e;
-      --line: #e7e1d6;
-    }
-    *,*::before,*::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--ink);
-      background: var(--cream);
-      -webkit-text-size-adjust: 100%;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--copper-deep); text-decoration: none; }
-    h1,h2,h3 { margin: 0 0 0.5em; line-height: 1.15; letter-spacing: -0.02em; color: var(--charcoal); }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StressFree Property Solutions — Handyman in Cypress, TX</title>
+<meta name="description" content="StressFree Property Solutions. Honest, on-time handyman work across Greater Houston. Serving Cypress, TX and surrounding neighborhoods.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root {
+  --paper: #F5F0E6;
+  --paper-deep: #ECE5D5;
+  --denim: #B7C9D6;
+  --denim-deep: #8FA5B5;
+  --workwear: #2F3437;
+  --workwear-soft: #3F454A;
+  --tan: #C49A5A;
+  --tan-deep: #A77F40;
+  --line: #CAD3D8;
+  --line-warm: #D8CFB8;
+  --text: #555B5F;
+  --text-strong: #2F3437;
+  --paper-card: #FBF7EC;
+}
 
-    /* --- APEX PREVIEW BANNER (uses Apex's own brand: electric blue + chrome on dark) --- */
-    .preview-banner {
-      background:
-        linear-gradient(90deg, #0a1628 0%, #1e3a8a 50%, #0a1628 100%);
-      color: #e0e7ff;
-      text-align: center;
-      padding: 11px 16px;
-      font-size: 0.86rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      border-bottom: 1px solid #1e40af;
-      box-shadow: inset 0 -1px 0 rgba(96,165,250,0.3);
-    }
-    .preview-banner strong {
-      color: #c0c0c0;
-      background: linear-gradient(90deg, #e5e4e2 0%, #a8a8a8 50%, #e5e4e2 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 700;
-    }
-    .preview-banner a { color: #60a5fa; text-decoration: underline; font-weight: 700; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
 
-    /* --- HERO --- */
-    .hero {
-      position: relative;
-      background: var(--charcoal);
-      color: #fff;
-      padding: 90px 0 100px;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 85% 25%, rgba(217,119,6,0.18) 0%, transparent 45%),
-        radial-gradient(circle at 15% 80%, rgba(217,119,6,0.08) 0%, transparent 40%),
-        repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(255,255,255,0.015) 80px, rgba(255,255,255,0.015) 81px);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: ''; position: absolute;
-      right: -120px; top: 50%; transform: translateY(-50%);
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero .container { position: relative; z-index: 1; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 9px;
-      background: rgba(217,119,6,0.12);
-      border: 1px solid rgba(217,119,6,0.35);
-      border-radius: 999px;
-      padding: 7px 16px;
-      font-size: 0.76rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 26px;
-      color: var(--copper-soft);
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: #22c55e; box-shadow: 0 0 10px #22c55e;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 18px;
-    }
-    .hero .tagline {
-      font-size: clamp(1.08rem, 2.2vw, 1.4rem);
-      max-width: 720px;
-      color: #d6cfc4;
-      margin: 0 0 38px;
-    }
-    .hero-ctas {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      margin-bottom: 36px;
-    }
-    .btn-primary, .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 17px 30px;
-      font-size: 1.02rem; font-weight: 700;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .btn-primary {
-      background: var(--copper);
-      color: #fff !important;
-      box-shadow: 0 12px 32px rgba(217,119,6,0.42);
-    }
-    .btn-primary:hover { transform: translateY(-2px); background: var(--copper-deep); box-shadow: 0 16px 38px rgba(217,119,6,0.5); }
-    .btn-secondary {
-      background: rgba(255,255,255,0.07);
-      color: #fff !important;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.13); }
-    .trust-row {
-      display: flex; flex-wrap: wrap; gap: 20px 32px;
-      margin-top: 28px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: 10px;
-      color: #cbbfae; font-size: 0.92rem; font-weight: 500;
-    }
-    .trust-item svg { color: var(--copper-soft); flex-shrink: 0; }
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: var(--text-strong);
+  margin: 0 0 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
 
-    /* --- SERVICES --- */
-    .services {
-      padding: 90px 0 80px;
-      background: var(--cream);
-    }
-    .section-eyebrow {
-      color: var(--copper-deep);
-      font-size: 0.78rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      color: var(--charcoal);
-      margin-bottom: 14px;
-    }
-    .section-sub {
-      color: var(--ink-soft); font-size: 1.05rem;
-      max-width: 640px; margin: 0 0 48px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-    .service-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 28px 24px;
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(31,29,27,0.08);
-      border-color: var(--copper-soft);
-    }
-    .service-icon {
-      width: 50px; height: 50px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--copper-soft);
-      margin-bottom: 20px;
-      box-shadow: 0 8px 18px rgba(31,29,27,0.18);
-    }
-    .service-card h3 {
-      font-size: 1.08rem;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin: 0;
-    }
+a { color: var(--text-strong); }
+a:hover { color: var(--workwear); }
 
-    /* --- ABOUT / WHY US --- */
-    .about-block {
-      padding: 90px 0;
-      background: var(--cream-warm);
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-text p {
-      color: var(--ink-soft);
-      font-size: 1.05rem;
-      margin: 0 0 16px;
-    }
-    .why-list { list-style: none; padding: 0; margin: 24px 0 0; }
-    .why-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 10px 0;
-      color: var(--charcoal);
-      font-weight: 500;
-    }
-    .why-list svg { flex-shrink: 0; margin-top: 3px; color: var(--copper); }
-    .stats-card {
-      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
-      color: #fff;
-      border-radius: 16px;
-      padding: 40px 32px;
-      box-shadow: 0 30px 60px rgba(31,29,27,0.18);
-      position: relative;
-      overflow: hidden;
-    }
-    .stats-card::before {
-      content: ''; position: absolute;
-      top: -50px; right: -50px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(217,119,6,0.2) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      position: relative;
-    }
-    .stat { text-align: left; }
-    .stat-num {
-      font-size: 2.4rem; font-weight: 900;
-      color: var(--copper-soft);
-      line-height: 1;
-    }
-    .stat-label { color: #cbbfae; font-size: 0.86rem; margin-top: 6px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
-    /* --- REVIEWS --- */
-    .reviews {
-      padding: 90px 0;
-      background: var(--cream);
-    }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-    .review-card {
-      background: var(--paper);
-      border-radius: 14px;
-      padding: 30px 28px;
-      box-shadow: 0 4px 14px rgba(31,29,27,0.06);
-      border: 1px solid var(--line);
-      position: relative;
-    }
-    .review-stars { color: #f59e0b; font-size: 1.15rem; letter-spacing: 2px; margin-bottom: 14px; }
-    .review-quote {
-      color: var(--charcoal);
-      font-size: 1.02rem;
-      font-style: italic;
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-    .review-author {
-      display: flex; align-items: center; gap: 12px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-    .author-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--copper) 0%, var(--copper-deep) 100%);
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .author-name { font-weight: 600; color: var(--charcoal); font-size: 0.95rem; }
-    .author-meta { color: var(--ink-soft); font-size: 0.82rem; }
+/* OWNER PREVIEW STRIP */
+.owner-strip {
+  background: var(--denim);
+  color: var(--workwear);
+  font-size: 13px;
+  padding: 8px 18px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--denim-deep);
+}
+.owner-strip a {
+  color: var(--workwear);
+  text-decoration: underline;
+  font-weight: 600;
+}
 
-    /* --- CTA SECTION --- */
-    .cta-section {
-      padding: 90px 0;
-      background: var(--charcoal);
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(217,119,6,0.18) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .cta-section .container { position: relative; z-index: 1; }
-    .cta-section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .cta-section p { color: #d6cfc4; font-size: 1.1rem; max-width: 580px; margin: 0 auto 36px; }
+/* TOP CONTACT BAR */
+.topbar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line-warm);
+  padding: 14px 0;
+}
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand-block {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: -0.005em;
+}
+.brand-trade {
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.topbar-link {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--text-strong);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--tan);
+  text-underline-offset: 4px;
+}
+.topbar-link:hover { color: var(--workwear); text-decoration-color: var(--workwear); }
 
-    /* --- CONTACT --- */
-    .contact {
-      padding: 80px 0;
-      background: var(--cream);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .contact-card-modern {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 26px;
-    }
-    .contact-label {
-      color: var(--copper-deep); font-size: 0.78rem;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      font-weight: 700; margin-bottom: 8px;
-    }
-    .contact-value { color: var(--charcoal); font-size: 1.1rem; font-weight: 600; }
-    .contact-note { color: var(--ink-soft); font-size: 0.85rem; margin-top: 6px; }
+/* HERO */
+.hero {
+  padding: 56px 0 70px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line-warm);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-left h1 {
+  font-size: clamp(34px, 4.6vw, 52px);
+  line-height: 1.08;
+  color: var(--text-strong);
+  margin-bottom: 18px;
+}
+.hero-left .lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 26px;
+  max-width: 460px;
+}
+.hero-services-mini {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  color: var(--text-strong);
+  font-size: 15px;
+}
+.hero-services-mini li {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line-warm);
+  display: flex;
+  justify-content: space-between;
+  max-width: 380px;
+}
+.hero-services-mini li:last-child { border-bottom: none; }
+.hero-services-mini li::after {
+  content: '·';
+  color: var(--tan);
+  font-weight: 700;
+}
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border: 1.5px solid var(--workwear);
+  transition: background .15s, color .15s;
+}
+.btn-solid {
+  background: var(--workwear);
+  color: var(--paper) !important;
+}
+.btn-solid:hover { background: var(--workwear-soft); color: var(--paper) !important; }
+.btn-ghost {
+  background: transparent;
+  color: var(--workwear) !important;
+}
+.btn-ghost:hover { background: var(--workwear); color: var(--paper) !important; }
+.hero-note {
+  font-size: 12px;
+  color: var(--text);
+  margin-top: 18px;
+  font-style: italic;
+  max-width: 320px;
+}
 
-    /* --- DISCLOSURE FOOTER (Apex brand - electric blue + chrome on dark) --- */
-    .disclosure {
-      background: #0a1628;
-      color: #94a3b8;
-      padding: 50px 0 40px;
-      font-size: 0.88rem;
-      line-height: 1.65;
-    }
-    .disclosure strong {
-      background: linear-gradient(90deg, #e5e4e2 0%, #a8a8a8 50%, #e5e4e2 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .disclosure a { color: #60a5fa; }
-    .disclosure .footer-fine { color: #475569; font-size: 0.78rem; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(96,165,250,0.12); }
+/* HERO VISUAL — polaroid stack */
+.hero-visual {
+  position: relative;
+  height: 380px;
+}
+.polaroid {
+  position: absolute;
+  background: var(--paper-card);
+  padding: 14px 14px 36px;
+  border: 1px solid var(--line-warm);
+  box-shadow: 0 14px 30px rgba(47,52,55,0.12), 0 2px 4px rgba(47,52,55,0.08);
+  width: 240px;
+  font-family: Georgia, serif;
+}
+.polaroid::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 70px; height: 18px;
+  background: rgba(196,154,90,0.45);
+  border: 1px dashed rgba(167,127,64,0.3);
+}
+.polaroid-photo {
+  background: var(--denim);
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--workwear);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+}
+.polaroid-photo.b { background: var(--paper-deep); color: var(--tan-deep); }
+.polaroid-photo.c { background: var(--workwear); color: var(--tan); }
+.polaroid-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-strong);
+  text-align: center;
+}
+.polaroid.p1 { top: 0; left: 0; transform: rotate(-4deg); }
+.polaroid.p2 { top: 50px; right: 0; transform: rotate(3deg); }
+.polaroid.p3 { bottom: 0; left: 70px; transform: rotate(-1.5deg); }
 
-    /* --- STICKY MOBILE CALL BUTTON --- */
-    .sticky-call {
-      position: fixed; bottom: 16px; left: 16px; right: 16px;
-      background: var(--copper);
-      color: #fff !important;
-      padding: 16px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.02rem;
-      box-shadow: 0 12px 32px rgba(217,119,6,0.5);
-      z-index: 1000;
-      display: none;
-    }
-    .sticky-call svg { vertical-align: middle; margin-right: 6px; }
+/* SECTION HEADER */
+.block { padding: 64px 0; }
+.block.alt { background: var(--paper-deep); border-top: 1px solid var(--line-warm); border-bottom: 1px solid var(--line-warm); }
+.section-rule {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.section-rule h2 {
+  font-size: 28px;
+  margin: 0;
+  white-space: nowrap;
+}
+.section-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--workwear);
+  opacity: 0.3;
+}
 
-    @media (max-width: 720px) {
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .sticky-call { display: block; }
-      .hero { padding: 70px 0 110px; }
-      .cta-section { padding: 70px 0 100px; }
-      .hero-ctas .btn-primary, .hero-ctas .btn-secondary { flex: 1 0 100%; justify-content: center; }
-    }
-  </style>
+/* SERVICES — text-list, two-column, no cards */
+.svc-list {
+  columns: 2;
+  column-gap: 64px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.svc-list li {
+  break-inside: avoid;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line-warm);
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: var(--text-strong);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.svc-list li::before {
+  content: '✓';
+  color: var(--tan-deep);
+  font-weight: 700;
+  font-family: -apple-system, sans-serif;
+  font-size: 14px;
+}
+
+/* ABOUT */
+.about-text p {
+  font-size: 17px;
+  color: var(--text);
+  margin: 0 0 14px;
+  max-width: 720px;
+}
+.about-meta {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  font-size: 15px;
+  color: var(--text-strong);
+}
+.about-meta li {
+  padding: 6px 0;
+  display: flex;
+  gap: 12px;
+}
+.about-meta li::before {
+  content: '—';
+  color: var(--tan-deep);
+  font-weight: 700;
+}
+
+/* SERVICE AREA */
+.area-text {
+  font-size: 17px;
+  color: var(--text-strong);
+  font-family: Georgia, serif;
+  margin: 0 0 12px;
+}
+.area-list {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.9;
+}
+.area-list span:not(:last-child)::after {
+  content: ' · ';
+  color: var(--tan);
+  padding: 0 6px;
+}
+
+/* REVIEWS — clearly labeled mockup */
+.review-note {
+  background: var(--paper-card);
+  border: 1px dashed var(--line);
+  padding: 22px 26px;
+  margin-bottom: 18px;
+  color: var(--text);
+  font-size: 14px;
+  font-style: italic;
+}
+.review-mockup-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+.review-mock {
+  border: 1px dashed var(--line);
+  padding: 28px 26px;
+  background: var(--paper);
+}
+.review-mock .label {
+  font-family: -apple-system, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tan-deep);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.review-mock .body {
+  font-family: Georgia, serif;
+  color: var(--text);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RECENT WORK polaroids */
+.work-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  padding: 14px 0;
+}
+.work-polaroid {
+  background: var(--paper-card);
+  padding: 14px 14px 30px;
+  border: 1px solid var(--line-warm);
+  box-shadow: 0 6px 18px rgba(47,52,55,0.08);
+  font-family: Georgia, serif;
+  position: relative;
+}
+.work-polaroid::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 30%;
+  width: 60px; height: 18px;
+  background: rgba(196,154,90,0.45);
+  transform: rotate(-3deg);
+}
+.work-polaroid .photo {
+  background: var(--paper-deep);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: -apple-system, sans-serif;
+  border: 1px solid var(--line);
+}
+.work-polaroid .cap {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-strong);
+  text-align: center;
+}
+
+/* CONTACT */
+.contact-frame {
+  border: 1.5px solid var(--workwear);
+  background: var(--paper-card);
+  padding: 36px;
+  max-width: 640px;
+}
+.contact-frame h3 {
+  font-size: 22px;
+  margin: 0 0 18px;
+  font-family: Georgia, serif;
+  color: var(--text-strong);
+}
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px dotted var(--line-warm);
+  font-family: Georgia, serif;
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-row .k {
+  color: var(--text);
+  font-style: italic;
+  font-size: 14px;
+}
+.contact-row .v {
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: right;
+}
+.contact-note-sm {
+  font-size: 13.5px;
+  color: var(--text);
+  font-style: italic;
+  margin-top: 16px;
+  line-height: 1.55;
+}
+
+/* CTA FINAL — soft denim band */
+.cta-band {
+  background: var(--denim);
+  padding: 60px 0;
+  border-top: 1px solid var(--denim-deep);
+  border-bottom: 1px solid var(--denim-deep);
+}
+.cta-band-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cta-band h2 {
+  font-size: 26px;
+  color: var(--workwear);
+  margin: 0;
+  max-width: 540px;
+}
+.cta-band .btn-solid { font-size: 16px; padding: 16px 26px; }
+
+/* FOOTER (light, no dark bar) */
+.foot {
+  background: var(--paper);
+  padding: 40px 0 32px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.foot strong { color: var(--text-strong); }
+.foot p { margin: 0 0 10px; }
+.foot .fine { color: var(--text); font-size: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line-warm); }
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { height: 340px; max-width: 320px; margin: 0 auto; }
+  .polaroid { width: 200px; }
+  .polaroid.p1 { left: -10px; }
+  .polaroid.p2 { right: -10px; top: 40px; }
+  .polaroid.p3 { left: 50px; }
+  .svc-list { columns: 1; }
+  .svc-list li { font-size: 16px; padding: 16px 0; }
+  .topbar-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .topbar-link { font-size: 15px; }
+  .cta-band-inner { flex-direction: column; align-items: flex-start; }
+  .contact-frame { padding: 26px 22px; }
+  .review-mock { padding: 26px 22px; }
+  .review-mock .body { font-size: 16px; }
+  .contact-note-sm { font-size: 14px; }
+  .foot { font-size: 15px; padding: 44px 0 36px; line-height: 1.7; }
+  .foot .fine { font-size: 13px; }
+  .owner-strip { font-size: 14px; padding: 10px 16px; line-height: 1.5; }
+  .hero-note { font-size: 13px; }
+}
+</style>
 </head>
 <body>
 
-  <div class="preview-banner">
-    Free preview built by <strong>Apex Development Group USA, LLC</strong> · Call Keith at <a href="tel:+12817141600">(281) 714-1600</a> to launch it
+<div class="owner-strip">
+  Owner preview by <strong>Apex Development Group USA, LLC</strong> — not the official site. <a href="tel:+12817141600">Call Keith (281) 714-1600</a> to launch or remove.
+</div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand-block">
+      <div class="brand-name">StressFree Property Solutions</div>
+      <div class="brand-trade">Handyman · Cypress, TX</div>
+    </div>
+    <a href="tel:+12817141600" class="topbar-link">Owner Preview: Call Keith</a>
   </div>
+</header>
 
-  <header class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">Serving Cypress, TX</div>
-      <h1>StressFree Property Solutions</h1>
-      <p class="tagline">Honest, on-time handyman work across Greater Houston</p>
-      <div class="hero-ctas">
-        <a href="tel:+12817141600" class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Launch this site — (281) 714-1600
-        </a>
-        <a href="#services" class="btn-secondary">See what's included</a>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>Repairs, installs, and the projects you keep putting off.</h1>
+        <p class="lede">Practical handyman help for homeowners around Cypress, TX — drywall, fixture installs, doors, and the small projects that keep getting pushed off.</p>
+        <ul class="hero-services-mini">
+          <li><span>Drywall repair, patching, and texture matching</span></li>
+          <li><span>Fixture installation (lights, ceiling fans, faucets)</span></li>
+          <li><span>Light carpentry, furniture assembly, and shelving</span></li>
+          <li><span>Door, lock, and hardware repair</span></li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="tel:+12817141600" class="btn btn-solid">Owner Preview: Call Keith to Launch</a>
+          <a href="mailto:keith.douglas@apexdevelopmentgroupusa.com?subject=Edit%20or%20remove%20preview%20for%20StressFree Property Solutions" class="btn btn-ghost">Request Edits or Removal</a>
+        </div>
+        <p class="hero-note">This is a private preview built by Apex. Not the official site of StressFree Property Solutions unless the owner approves it.</p>
       </div>
-      <div class="trust-row">
-        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Local Houston business</div>
-        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Same-day quotes</div>
-        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Free estimates</div>
-        <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Honest pricing</div>
-      </div>
-    </div>
-  </header>
-
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-eyebrow">What We Do</div>
-      <h2 class="section-title">Trusted service across Cypress, TX</h2>
-      <p class="section-sub">Whether it's a small repair or a project you've been putting off, we show up on time and do the job right the first time.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>Drywall repair, patching, and texture matching</h3>
+      <div class="hero-visual">
+        <div class="polaroid p1">
+          <div class="polaroid-photo">Photo Area Preview</div>
+          <div class="polaroid-caption">Approved photos after launch</div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0l-4-4m4 4l4-4M5 16l-2.5 2.5a2.121 2.121 0 0 0 3 3L8 19m11-3l2.5 2.5a2.121 2.121 0 0 1-3 3L16 19"/><rect x="4" y="10" width="16" height="6" rx="1"/></svg></div>
-          <h3>Fixture installation (lights, ceiling fans, faucets, hardware)</h3>
+        <div class="polaroid p2">
+          <div class="polaroid-photo b">Photo Area Preview</div>
+          <div class="polaroid-caption">Approved photos after launch</div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-          <h3>Light carpentry, furniture assembly, and shelving</h3>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4M9 11V7a3 3 0 0 1 6 0v4M9 11h6"/></svg></div>
-          <h3>Honey-do list and general home maintenance</h3>
+        <div class="polaroid p3">
+          <div class="polaroid-photo c">Photo Area Preview</div>
+          <div class="polaroid-caption">Project photos can be added here</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="about-block">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <div class="section-eyebrow">About Us</div>
-          <h2 class="section-title">About StressFree Property Solutions</h2>
-          <p>Local handyman service serving Cypress, TX. Small jobs done right — drywall, fixture installs, light carpentry, and the projects you keep meaning to get to. Call for a free quote.</p>
-          <ul class="why-list">
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Locally owned and operated in Cypress, TX</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Upfront pricing — no surprise add-ons</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day phone response, scheduled work, clean job sites</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Work done right the first time, guaranteed</li>
-          </ul>
-        </div>
-        <div class="stats-card">
-          <div class="stat-row">
-            <div class="stat"><div class="stat-num">—</div><div class="stat-label">Google rating</div></div>
-            <div class="stat"><div class="stat-num">—</div><div class="stat-label">Reviews</div></div>
-            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Local Houston</div></div>
-            <div class="stat"><div class="stat-num">7-day</div><div class="stat-label">Response window</div></div>
-          </div>
-        </div>
+<section class="block">
+  <div class="wrap">
+    <div class="section-rule"><h2>What we do</h2></div>
+    <ul class="svc-list">
+      <li>Drywall repair, patching, and texture matching</li>
+      <li>Fixture installation (lights, ceiling fans, faucets)</li>
+      <li>Light carpentry, furniture assembly, and shelving</li>
+      <li>Door, lock, and hardware repair</li>
+      <li>Small repairs and punch-list help</li>
+      <li>Caulking and weather sealing</li>
+      <li>Furniture and shelving assembly</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="section-rule"><h2>About</h2></div>
+    <div class="about-text">
+      <p>StressFree Property Solutions works with homeowners around Cypress, TX on the kinds of jobs that keep getting pushed off — small repairs, fixture installs, doors that don't latch, drywall patches, the punch list after a contractor leaves.</p>
+      <p>Service details and pricing approach can be confirmed by the owner before launch.</p>
+      <ul class="about-meta">
+        <li>Locally based in Cypress, TX</li>
+        <li>Direct phone and contact details can be confirmed before launch</li>
+        <li>Estimate policy can be added after owner approval</li>
+        <li>Final service details, reviews, and project photos can be approved by the owner</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-rule"><h2>Where we work</h2></div>
+    <p class="area-text">Serving Cypress, TX and surrounding neighborhoods.</p>
+    <div class="area-list">
+      <span>Cypress, TX</span>
+      <span>Cypress</span>
+      <span>Spring</span>
+      <span>Tomball</span>
+      <span>Klein</span>
+      <span>Champions</span>
+      <span>NW Houston</span>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="section-rule"><h2>Project photos</h2></div>
+    <div class="work-row">
+      <div class="work-polaroid">
+        <div class="photo">Photo Area Preview</div>
+        <div class="cap">Approved Photos After Launch</div>
+      </div>
+      <div class="work-polaroid">
+        <div class="photo">Photo Area Preview</div>
+        <div class="cap">Approved Photos After Launch</div>
+      </div>
+      <div class="work-polaroid">
+        <div class="photo">Photo Area Preview</div>
+        <div class="cap">Project Photos Can Be Added Here</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="reviews">
-    <div class="container">
-      <div class="section-eyebrow">What Customers Say</div>
-      <h2 class="section-title">Real reviews from real neighbors</h2>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-quote">"Be the first to leave a Google review for StressFree Property Solutions — we just got their website set up."</div>
-          <div class="review-author">
-            <div class="author-avatar">A</div>
-            <div><div class="author-name">Apex Development Group USA</div><div class="author-meta">Google review</div></div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <div class="review-quote">"Reach out at (713) 264-8240 — same-day quotes for most jobs."</div>
-          <div class="review-author">
-            <div class="author-avatar">S</div>
-            <div><div class="author-name">StressFree Property Solutions</div><div class="author-meta">Google review</div></div>
-          </div>
-        </div>
+<section class="block">
+  <div class="wrap">
+    <div class="section-rule"><h2>Customer reviews</h2></div>
+    <div class="review-note">
+      Review section is a preview placeholder. After StressFree Property Solutions approves the site, real customer reviews from Google, Facebook, or past jobs can be added here. No reviews are currently shown.
+    </div>
+    <div class="review-mockup-row">
+      <div class="review-mock">
+        <div class="label">Approved review #1</div>
+        <div class="body">Customer feedback can appear here after launch.</div>
+      </div>
+      <div class="review-mock">
+        <div class="label">Approved review #2</div>
+        <div class="body">Customer feedback can appear here after launch.</div>
+      </div>
+      <div class="review-mock">
+        <div class="label">Approved review #3</div>
+        <div class="body">Customer feedback can appear here after launch.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cta-section">
-    <div class="container">
-      <div class="section-eyebrow" style="color:var(--copper-soft);">Ready to Launch</div>
-      <h2>Make StressFree Property Solutions look this good — for real.</h2>
-      <p>This is a free preview built by Apex Development Group USA. Call Keith Douglas to launch it as your live site for just $197/month.</p>
-      <a href="tel:+12817141600" class="btn-primary" style="font-size:1.15rem; padding:18px 36px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call Keith — (281) 714-1600
-      </a>
+<section class="block">
+  <div class="wrap">
+    <div class="section-rule"><h2>Contact</h2></div>
+    <div class="contact-frame">
+      <h3>StressFree Property Solutions</h3>
+      <div class="contact-row"><span class="k">Business phone after launch</span><span class="v">(713) 264-8240</span></div>
+      <div class="contact-row"><span class="k">Service area</span><span class="v">Cypress, TX & surrounding</span></div>
+      <div class="contact-row"><span class="k">Hours</span><span class="v">By appointment — call for a quote</span></div>
+      <p class="contact-note-sm">During preview, all call CTAs route to Keith at Apex. The number above is the business line that will receive calls once the site goes live.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact">
-    <div class="container">
-      <div class="section-eyebrow">Get In Touch</div>
-      <h2 class="section-title">Contact StressFree Property Solutions</h2>
-      <div class="contact-grid">
-        <div class="contact-card-modern">
-          <div class="contact-label">Your business line</div>
-          <div class="contact-value">(713) 264-8240</div>
-          <div class="contact-note">Routes to your phone once you launch</div>
-        </div>
-        <div class="contact-card-modern">
-          <div class="contact-label">Service area</div>
-          <div class="contact-value">Cypress, TX and surrounding</div>
-        </div>
-        <div class="contact-card-modern">
-          <div class="contact-label">Hours</div>
-          <div class="contact-value">By appointment — call (713) 264-8240 for a quote</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="block alt">
+  <div class="wrap">
+    <div class="section-rule"><h2>Missed-call text-back after launch</h2></div>
+    <p style="font-size:17px;color:var(--text-strong);max-width:720px;font-family:Georgia,serif;">When you are on a job and miss a call, the Starter plan can send a quick text reply so the homeowner knows you received the call. This can be activated after the owner approves the site.</p>
+  </div>
+</section>
 
-  <footer class="disclosure">
-    <div class="container">
-      <p><strong>This is a preview website.</strong> Built by Apex Development Group USA, LLC using public information about StressFree Property Solutions. Not the official site of StressFree Property Solutions and not yet endorsed by them.</p>
-      <p>If you are the owner and want to launch this as your real website — or have it taken down — contact <strong>Keith Douglas at <a href="tel:+12817141600">(281) 714-1600</a></strong> or <a href="mailto:keith.douglas@apexdevelopmentgroupusa.com">keith.douglas@apexdevelopmentgroupusa.com</a>.</p>
-      <p class="footer-fine">© Apex Development Group USA, LLC · Houston, TX · Not indexed by search engines.</p>
-    </div>
-  </footer>
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2>Owner of StressFree Property Solutions? Call Keith to launch this preview as your real site.</h2>
+    <a href="tel:+12817141600" class="btn btn-solid">Call Keith — (281) 714-1600</a>
+  </div>
+</section>
 
-  <a href="tel:+12817141600" class="sticky-call">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Launch this site — Call Keith (281) 714-1600
-  </a>
+<footer class="foot">
+  <div class="wrap">
+    <p>Preview built by <strong>Apex Development Group USA, LLC</strong>. Not the official website of StressFree Property Solutions unless approved by the owner. To request edits, approval, or removal, contact Keith Douglas at <a href="tel:+12817141600">(281) 714-1600</a> or <a href="mailto:keith.douglas@apexdevelopmentgroupusa.com">keith.douglas@apexdevelopmentgroupusa.com</a>.</p>
+    <p class="fine">© Apex Development Group USA, LLC · Houston, TX · This page is not indexed by search engines.</p>
+  </div>
+</footer>
 
 </body>
 </html>
